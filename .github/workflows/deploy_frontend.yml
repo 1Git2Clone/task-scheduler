@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages (On Build Success)
+
+on:
+  workflow_run:
+    uses: .github/workflows/frontend.yml
+    outputs:
+      build_status: ${{ steps.build.outputs.build_status }}
+    secrets:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: |
+          npm install yarn --global
+          yarn install
+      - name: Build the React app
+        run: yarn build
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          source: frontend/dist
+          destination: "1git2clone.github.io/task-scheduler"
