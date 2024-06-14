@@ -24,6 +24,7 @@ jobs:
 
       - name: Build
         run: |
+          cd frontend
           npm install yarn --global
           yarn install
           yarn global add vite
