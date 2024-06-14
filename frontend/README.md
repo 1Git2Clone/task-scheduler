@@ -122,7 +122,7 @@ file](package.json) to get to know more about the scripts that get ran. It uses
 
 ```sh
 npm install
-npm run watch # or: npm run build && npm preview
+npm run serve
 ```
 
 ---
@@ -140,5 +140,5 @@ Proceed as normal.
 
 ```sh
 yarn install
-yarn tauri dev # or: yarn build && yarn preview
+yarn serve
 ```
