@@ -37,6 +37,8 @@ jobs:
           path: frontend/dist
 
   deploy:
+    needs: build
+
     permissions:
       contents: read
       pages: write
