@@ -31,9 +31,6 @@ jobs:
           yarn global add nodemon
           yarn run build
           chmod 755 -R dist
-          REPO_NAME=$(basename $GITHUB_REPOSITORY)
-          mkdir dist/$REPO_NAME
-          mv dist/assets dist/$REPO_NAME/assets
 
       - uses: actions/upload-pages-artifact@v3
         with:
