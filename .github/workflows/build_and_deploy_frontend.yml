@@ -32,7 +32,7 @@ jobs:
           yarn run build
           chmod 755 -R dist
 
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
           path: frontend/dist
