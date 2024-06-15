@@ -9,6 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var webView: WebView
+
+    // You'll need to update that with your repository URL.
+    private val repoUrl = "https://1git2clone.github.io/task-scheduler/"
+
     private val headers: Map<String, String> = mapOf("Access-Control-Allow-Origin" to "*")
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -21,10 +25,6 @@ class MainActivity : AppCompatActivity() {
         webSettings.javaScriptEnabled = true
         webView.webViewClient = WebViewClient()
 
-
-        // Load local HTML file
-        // webView.loadUrl("file:///android_asset/index.html",  headers)
-        // Development
-        webView.loadUrl("http://localhost:5173/")
+        webView.loadUrl(repoUrl, headers)
     }
 }

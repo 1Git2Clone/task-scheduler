@@ -11,9 +11,6 @@
 # /.idea/assetWizardSettings.xml
 /.idea/
 
-# The contents are the same as frontend/dist/
-/app/src/main/assets
-
 .DS_Store
 /build
 /captures

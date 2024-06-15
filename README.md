@@ -87,13 +87,11 @@ script on Linux.
 #### On Linux
 
 ```sh
-./gradlew copyFrontendBuild
 ./gradlew assembleRelease # Or you can use `assembleDebug`.
 ```
 
 #### On Windows
 
 ```bat
-gradlew.bat copyFrontendBuild
 gradlew.bat assembleRelease & :: Or you can use `assembleDebug`.
 ```
