@@ -17,3 +17,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Follow the following guide to sign your Android app APK
+# https://developer.android.com/studio/publish/app-signing
+upload-keystore.jks
