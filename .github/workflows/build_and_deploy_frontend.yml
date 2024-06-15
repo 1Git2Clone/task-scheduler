@@ -31,13 +31,9 @@ jobs:
           yarn global add nodemon
           yarn run build
           chmod 755 -R dist
-
-      - name: Add base URL to index.html
-        run: |
           REPO_NAME=$(basename $GITHUB_REPOSITORY)
-          if ! grep -q "<base href=\"/${REPO_NAME}/\">" dist/index.html; then
-            sed -i "s|<head>|<head><base href=\"/${REPO_NAME}/\">|" dist/index.html
-          fi
+          mkdir dist/$REPO_NAME
+          mv dist/assets dist/$REPO_NAME/assets
 
       - uses: actions/upload-pages-artifact@v3
         with:
